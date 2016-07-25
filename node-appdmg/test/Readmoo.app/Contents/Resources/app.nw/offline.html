@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+  <link rel="stylesheet" href="stylesheets/main.css">
+    <style id="body">
+      @font-face{
+        font-family: xin-w4;
+        src: url(http://localhost:3300/fonts/xin-w4.otf);
+      }
+      body {
+        overflow-x: hidden;
+        font-family: xin-w4;
+      }
+    </style>
+</head>
+<body class="offline" style="-webkit-app-region: drag overflow-x: hidden !important;">
+  <div id="loaded"></div>
+  <div class="topbar">
+     <span class="logo">
+       <img src="images/ImportedLayers.png" alt="">
+     </span>
+  </div>
+
+  <div class="wrapper">
+    <div class="offlineWrap" style="">
+      <div class="divCenter">
+        <img src="./images/wifi.png" width="100px" height="auto">
+        <div>
+          <p>在連線狀態下獲得最佳使用體驗</p>
+        </div>
+        <div>
+          <p>已連線？</p>
+          <p class="connect">
+            <a>
+              再試一次
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="init-message"></div>
+  <script src="javascripts/lib/jquery.min.js"></script>
+  <script>
+
+   /* var myFunction = function(){
+      var classname = document.getElementByClassName('connect');
+
+      var reConnect = function(){
+        console.log('reConnect');
+        if (navigator.onLine)
+          window.location = 'app://readmoo/index.html';
+      };
+
+      for (var i =0; i<classname.length; i++){
+        classname[i].addEventListener('click', reConnect, false);
+      }
+    }*/
+
+    (function(){
+      // var classname = document.getElementByClassName('connect');
+      console.log('hello offline: ' + $);
+      $('.connect').on('click', function(){
+          // console.log('got click');
+          if (navigator.onLine)
+            window.location = 'app://readmoo/index.html';
+          else
+            alert('confirm network is ready');
+      });
+    })();
+
+  </script>
+</body>
+</html>

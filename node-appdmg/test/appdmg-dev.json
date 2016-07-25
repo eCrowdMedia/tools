@@ -1,0 +1,10 @@
+{
+  "title": "Readmoo Desktop App",
+  "icon": "icon-mac.icns",
+  "background": "install-bg.png",
+  "icon-size": 80,
+  "contents": [
+    { "x": 448, "y": 244, "type": "link", "path": "/Applications" },
+    { "x": 192, "y": 244, "type": "file", "path": "Readmoo-dev.app" }
+  ]
+}

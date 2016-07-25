@@ -1,0 +1,1 @@
+!function(){"use strict";var a;return a=function(){return window.location.reload()},applicationCache.addEventListener("updateready",a),applicationCache.addEventListener("cached",a)}();

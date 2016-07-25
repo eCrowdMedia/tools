@@ -1,0 +1,29 @@
+<li class="highlight_item" data-highlightid="{{highlight.id}}" data-type="{{highlight.type}}" data-cfi="{{highlight.locators.location}}">
+    <blockquote class="annotation-content">
+    <p><span>{{highlight.content}}</span></p>
+    </blockquote>
+    <div class="date">{{highlight.relative_date}}</div>
+    <div class="tools">
+        <span class="add" data-comments="{{highlight.comments_count}}">留言</span>
+        <a class="share" href="https://www.facebook.com/sharer/sharer.php?u={{highlight.permalink_url}}" target="_blank" tabindex="-1">分享</a>
+        <span class="delete">刪除</span>
+    </div>
+    {{!-- <div class="comments {{#if highlight.annotation}}show{{/if}}">
+        {{#if annotation}}
+        <div class="comment">
+            <a href="{{highlight.user.permalink_url}}" target="_blank"><img src="{{highlight.user.avatar_url}}" alt="{{highlight.user.nickname}}" class="member-avatar" tabindex="-1"></a>
+            <div class="comment-content">
+                {{annotation}}
+            </div>
+        </div>
+        {{/if}}
+    </div> --}}
+    <div class="comments"></div>
+    <div class="add-comment-outer">
+        <textarea class="comment-textarea" placeholder="說說你的看法..."></textarea>
+        <div class="buttons">
+            <button class="cancel" tabindex="-1">取消</button>
+            <button class="submit" tabindex="-1">送出</button>
+        </div>
+    </div>
+</li>

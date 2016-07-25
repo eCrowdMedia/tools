@@ -1,0 +1,21 @@
+{
+    "nwjs_path": "/Users/jackie/Readmoo/node-webkit-app/tools/nwjs-macappstore-v0.12.3-osx-x64/nwjs.app", 
+    "source_path": "/Users/jackie/Readmoo/node-webkit-app/dist",
+    "build_path": "build",
+    "icon_path": "/Users/jackie/Readmoo/node-webkit-app/dist/appicon/icon-mas.icns",
+    "name": "Readmoo 看書",
+    "bundle_id": "com.readmoo.readmoodesktop",
+    "version": "1.3.24",
+    "bundle_version": "1324",
+    "copyright": "Copyright © 2015, eCrowd Media, Inc.",
+    "app_category": "public.app-category.entertainment",
+    "app_sec_category": "public.app-category.Education",
+    "identity": "DQ4448ZZE5",
+    "identity_installer": "DQ4448ZZE5",
+    "entitlements": [
+        "com.apple.security.app-sandbox",
+        "com.apple.security.network.client",
+        "com.apple.security.network.server"
+    ],
+    "uglify_js": false
+}

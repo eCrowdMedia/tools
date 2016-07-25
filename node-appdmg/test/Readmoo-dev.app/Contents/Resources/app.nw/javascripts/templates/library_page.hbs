@@ -1,0 +1,36 @@
+<div class="library" data-role="page" data-state="">
+        <table>
+          <tr>
+            <td>
+              <div id="search-library" style="padding-left:10px">
+              <div class="list-style"></div>
+              <input type="text" placeholder="搜尋書名或作者"><button>搜尋</button>
+              </div>
+            </td>
+            <td>
+              <select id="filter-library">
+                <option value="">
+                  全部書籍
+                </option>
+                <optgroup class="state" label="閱讀狀態">
+                  <option value="reading">正在閱讀</option>
+                  <option value="start">尚未開始</option>
+                  <option value="finished">已完讀</option>
+                </optgroup>
+                <optgroup class="tags" label="書櫃">
+
+                </optgroup>
+              </select>
+              <select id="sort-library">
+                <option value="id">最近加入</option>
+                <option value="touched_at">最近閱讀</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+
+
+        <ol class="library-grid-container">
+
+        </ol>
+      </div>
