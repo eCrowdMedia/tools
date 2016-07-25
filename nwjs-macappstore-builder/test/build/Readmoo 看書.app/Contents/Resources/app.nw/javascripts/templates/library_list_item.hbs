@@ -1,0 +1,46 @@
+<li class="library-list-item" data-action="{{action}}" data-tags="{{#if tags}}{{tags}}{{else}}未分類{{/if}}" data-archive="{{library_item.archive}}" data-private="{{library_item.private}}" data-18x="{{library_item.book.18x}}" data-size="{{library_item.file_size}}" data-bookid="{{library_item.book.id}}" data-state="{{#if library_item.reading.state}}{{library_item.reading.state}}{{else}}start{{/if}}" data-touchedat="{{library_item.reading.touched_at}}" data-progress="{{library_item.reading.progress}}" data-title="{{library_item.book.title}}" data-author="{{library_item.book.author}}" data-search="{{library_item.book.title}}{{library_item.book.author}}" data-marathon={{library_item.marathon}}>
+
+<div class="book-container">
+    <div class="book-cover" title="{{library_item.book.title}}">
+      <div class="paddingBottom">
+        <img class="book-image" src={{cover_url}} alt="">
+      </div>
+    </div>
+    <div class="book_detail">
+      <div class="book_title" title={{library_item.book.title}}>{{library_item.book.title}}</div>
+      <div class="book_author" title={{library_item.book.author}}>{{library_item.book.author}}</div>
+      <div class="progress-bar-wrapper">
+        {{#if library_item.reading.progress}}
+          <div class="progress-value">閱讀進度 {{#isnt library_item.reading.state "finished"}} {{library_item.reading.progress}}% {{else}} 100%{{/isnt}}</div>
+        {{else}}
+          {{#isnt library_item.reading.state "finished"}}
+            <div class="progress-value">閱讀進度 0%</div>
+          {{else}} <div class="progress-value">閱讀進度 100%</div>{{/isnt}}
+        {{/if}}
+        <progress max="100" value={{#is library_item.reading.state "finished"}} 100 {{else}}{{library_item.reading.progress}}{{/is}}></progress>
+      </div>
+
+      <!-- <div class="reading_progress"></div> -->
+    </div>
+    <div class="notice-icon">
+    </div>
+</div>
+<div class="mask">
+  <div class="progress-icon" id="progress-icon">
+  </div>
+</div>
+  <ul class="iw-contextMenu iw-created iw-cm-menu" tabindex="-1" data-item="{{library_item.book.id}}">
+    <li class="" id="download">
+      下載書籍
+    </li>
+    <li class="" id="open">
+      開啟書籍
+    </li>
+    <li class="" id="delete">
+      刪除書籍
+    </li>
+  </ul>
+</li>
+
+
+

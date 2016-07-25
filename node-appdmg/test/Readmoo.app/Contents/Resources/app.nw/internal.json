@@ -1,0 +1,20 @@
+{
+  "name": "Readmoo-dev",
+  "version": "1.3.24",
+  "manifestUrl": "http://readmoo-cf-development.s3.amazonaws.com/download/apps/desktop/package.json",
+  "packages": {
+    "mac": {
+      "x64": {
+        "url": "https://cdn.readmoo.com/download/apps/desktop/osx64/update.zip"
+      }
+    },
+    "win": {
+      "ia32": {
+        "url": "https://cdn.readmoo.com/download/apps/desktop/win32/update.zip"
+      },
+      "x64": {
+        "url": "https://cdn.readmoo.com/download/apps/desktop/win64/update.zip"
+      }
+    }
+  }
+}

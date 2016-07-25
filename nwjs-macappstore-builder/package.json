@@ -1,0 +1,62 @@
+{
+  "name": "nwjs-macappstore-builder",
+  "version": "3.1.5",
+  "description": "Easily build and publish NW.js apps on the Mac App Store.",
+  "keywords": [
+    "cli-app",
+    "cli",
+    "bin",
+    "shell",
+    "script",
+    "nw",
+    "nwjs",
+    "node-webkit",
+    "mas",
+    "appstore",
+    "macappstore",
+    "osx",
+    "mac"
+  ],
+  "homepage": "https://github.com/johansatge/nwjs-macappstore-builder",
+  "bugs": {
+    "url": "https://github.com/johansatge/nwjs-macappstore-builder/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Johan Satgé",
+    "url": "http://johansatge.com"
+  },
+  "files": [
+    "src/builder.js",
+    "src/steps",
+    "src/cli.js"
+  ],
+  "main": "src/builder.js",
+  "bin": {
+    "nwjs-macappstore-builder": "src/cli.js"
+  },
+  "repository": "johansatge/nwjs-macappstore-builder",
+  "dependencies": {
+    "async": "^1.4.2",
+    "colors": "^1.1.2",
+    "glob": "^5.0.14",
+    "plist": "^1.1.0",
+    "replace": "^0.3.0",
+    "shelljs": "^0.5.3",
+    "uglify-js": "^2.4.24",
+    "validator.js": "^1.2.2",
+    "yargs": "^3.24.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.2"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "os": [
+    "darwin"
+  ],
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -u tdd --reporter spec --timeout 20000"
+  }
+}

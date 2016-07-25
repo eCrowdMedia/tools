@@ -1,0 +1,30 @@
+<div id="feedback-pad" class="control-pad-center" tabindex="-1">
+  <h3 class="pad-head">意見回饋<span class="close"></span></h3>
+  <div class="pad-body">
+
+      <p class="hint">對Readmoo看書有何建議？</p>
+
+      <form action="">
+          <select name="" id="q-type">
+              <option value="ERROR" selected>發現錯誤</option>
+              <option value="FLOW">流程不順</option>
+              <option value="FUNCTION_ERROR">功能失效</option>
+              <option value="QUESTION">操作問題</option>
+              <option value="404">連結失效</option>
+              <option value="OTHER">建議意見</option>
+          </select>
+          <div class="input-outer">
+              <input type="text" placeholder="" required="required" class="subject">
+          </div>
+          <div class="input-outer">
+              <input type="email" placeholder="你的Email" value={{email}} required="required" class="email">
+          </div>
+          <div class="textarea-outer">
+              <textarea name="" id="" placeholder="問題描述" class="content"></textarea>
+          </div>
+          <button type="submit">送出</button>
+          <div class="thankyou">收到了，感謝您的意見！:)</div>
+          <div class="fail">網路有些問題，請稍後再試:)</div>
+      </form>
+  </div>
+</div>

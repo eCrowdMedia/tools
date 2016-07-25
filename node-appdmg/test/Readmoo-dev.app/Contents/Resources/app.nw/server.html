@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./javascripts/lib/jquery.min.js"></script>
+</head>
+<body style="-webkit-background-size:cover;">
+  <script type="text/javascript">
+  delayExec = function () {
+    // 被以 app://readmoo/server.html 方式啟動
+    console.log("server.html");
+    // console.log("window.location.href = " + window.location.href);
+
+    var fse = require('fs-extra');
+    // var os = require('os');
+    // var platform = os.platform();
+    var server = require('./javascripts/simpleServer/Server.js');
+    // var pkg = require('./package.json');
+    var Utils = require('./javascripts/Utils.js');
+
+    // Desktop App 全域變數
+    // server.html -> app.js -> nwAppRouter.js -> main.js
+    // 在 nwAppRouter.js（含）之後定義的 window.xyz 被 Backbone 控管，
+    // 可以擇一透過 window.xyz 或 global.window.xyz 使用
+    /*
+    global.App = {};
+    window.App = {};
+
+    var dirCwd = process.cwd();
+
+    var getDistribute = function () {
+    // 穩定後，可將 Server.js 內的類似程式移除
+      // var dirname = process.cwd();
+      // var dist;
+
+      if (platform === 'darwin') {
+        dist = dirCwd.split('/');
+        
+        if (dist[dist.length - 1] === 'dist')
+          return 'dist';
+        else
+          return 'mac';
+      }
+      else
+        return 'win';
+    };
+
+    global.App.dist = getDistribute();
+    window.App.dist = getDistribute();
+
+    // 判斷作業系統的資料區路徑
+    if (global.App.dist === 'win') {
+      global.App.rootData = dirCwd;
+    }
+    else {
+      // 判斷正式版、開發版
+      global.App.rootData = '/Users/' + process.env['USER'] + '/Library/Containers/com.readmoo.desktop' + (pkg.internal == 'yes' ? '/Readmoo-dev/' : '/Readmoo/');
+    }
+
+    window.App.rootData = global.App.rootData;
+    */
+
+    // global.pathBook = window.App.pathBook;
+
+    dictDistribute = Utils.persist.getDistribute();
+    dirCwd = dictDistribute.cwd;
+
+    global.App = {};
+
+    global.App.dist = dictDistribute.dist;
+    global.App.rootData = Utils.persist.getRoot();
+
+    window.App = {}; // dist 環境需要，勿省略
+    window.App.dist = global.App.dist;
+    window.App.rootData = global.App.rootData;
+
+    // if (global.App.dist !== 'win') {
+      if (!fse.existsSync(global.App.rootData)) {
+        // 將執行環境完整移植到工作區，否則資料會無法寫入被 codesign 過的區域
+        // console.log("!fse.existsSync(window.App.rootPath)");
+        fse.mkdirsSync(global.App.rootData);
+        fse.copySync(dirCwd, global.App.rootData);
+        // fse.copySync(process.cwd(), window.App.rootPath, function (err) {
+        //   if (err) return console.error("copySync error : " + err)
+        //     console.log("copy success!")
+        // });
+      }
+      else if (global.App.dist != 'win') {
+        // 確保工作區是最新版程式
+        fse.copySync(dirCwd, global.App.rootData.slice(0, -1));
+      }
+    // }
+
+    // 開啟 local server
+    server.create();
+
+    // 轉換主畫面，進入 node.js 環境
+    window.location = 'app://readmoo/index.html?base=' + global.App.localServer;
+  }
+  // setTimeout(delayExec, 500);
+  var bgImg = new Image();
+  bgImg.onload = function(){
+    document.body.style.backgroundImage = 'url(' + bgImg.src + ')';
+    // 確認背景圖已經足夠呈現之後，才開始啟動 App
+    setTimeout(delayExec, 100);
+  };
+  bgImg.src = "./images/splash.png";
+  </script>
+</body>
+</html>

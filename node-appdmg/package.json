@@ -1,0 +1,27 @@
+{
+  "name": "appdmg",
+  "version": "0.3.1",
+  "license": "MIT",
+  "author": "Linus Unnebäck <linus@folkdatorn.se>",
+  "bin": "bin/appdmg",
+  "main": "index.js",
+  "preferGlobal": true,
+  "dependencies": {
+    "temp": "~0.7.0",
+    "async": "~0.7.0",
+    "minimist": "~0.0.8",
+    "image-size": "~0.2.3",
+    "fs-xattr": "~0.1.4",
+    "ds-store": "~0.1.4"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "os": [
+    "darwin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/LinusU/node-appdmg.git"
+  }
+}
