@@ -1,0 +1,11 @@
+node-appdmg/test/Readmoo_*.dmg
+
+nwjs-v0.12.3-win-ia32/dist
+nwjs-v0.12.3-win-ia32-dev/dist
+nwjs-v0.12.3-win-x64/dist
+nwjs-v0.12.3-win-x64-dev/dist
+
+nwjs-v0.12.3-win-ia32/Readmoo_installer.exe
+nwjs-v0.12.3-win-x64/Readmoo_installer.exe
+
+release
