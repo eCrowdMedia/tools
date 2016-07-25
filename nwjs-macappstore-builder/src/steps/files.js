@@ -55,7 +55,8 @@ m.fixPermissions = function(app_path, callback)
 {
     // exec('cd "' + app_path + '/Contents/Resources/app.nw" && find . -type f -exec chmod 664 {} \\;', function(error)
     // 2016/06/13 將權限改成 755
-    exec('cd "' + app_path + '/Contents/Resources/app.nw" && find . -type f -exec chmod 755 {} \\;', function(error)
+    // 2016/07/25 將權限改成 555
+    exec('cd "' + app_path + '/Contents/Resources/app.nw" && find . -type f -exec chmod 555 {} \\;', function(error)
     {
         callback(error);
     });
