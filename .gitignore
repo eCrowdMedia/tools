@@ -1,4 +1,4 @@
-node-appdmg/test/Readmoo-dev.app
+node-appdmg/test/Readmoo*.app
 node-appdmg/test/*.dmg
 
 nwjs-macappstore-builder/test/build/
